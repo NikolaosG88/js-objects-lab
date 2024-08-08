@@ -107,11 +107,14 @@ Exercise 8
 Solve Exercise 8 here:
 */
 
-for (let name = 0; name < name.length; name++) {
-    console.log(name);
+for (let name = 0; name < name.length; name++) { 
+  console.log(name); 
 }
 
-console.log(game.party.name);
+console.log(game.party[0]);
+console.log(game.party[1]);
+console.log(game.party[2]);
+console.log(game.party[3]);
 console.log('___________ex 9__________');
 
 
