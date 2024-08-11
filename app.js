@@ -16,11 +16,6 @@ const game = {
       { name: "pokeball", quantity: 8 },
       { name: "rare candy", quantity: 99 },
     ],
-    difficulty: [
-      {val: 'Easy'}, 
-      {val: 'Med'}, 
-      {val: 'Hard'},
-    ],
   }
  console.log('___________ex 1__________');
  //console.dir(pokemon, { maxArrayLength: null })
@@ -36,7 +31,9 @@ Exercise 3
 
 Solve Exercise 3 here:
 */
+game.difficulty = 'easy';
 console.log(game.difficulty);
+
 console.log('___________ex 4__________');
 /*
 Exercise 4
@@ -71,9 +68,20 @@ Exercise 6
 
 Solve Exercise 6 here:
 */
-for (let completed = 0; completed < 3; completed++) {
-    game.gyms[completed] = true;
-}
+
+// for (let i = 0; i < game.gyms.length; i++) {
+// console.log(game.gyms[i]);
+// if (game.gyms[i].difficulty <= 3) {
+// game.gyms[i].completed = true;
+// }
+//  }; 
+
+game.gyms.forEach(gym => {
+  if(gym.difficulty < 3) {
+    gym.completed = true;
+  }
+})
+
 console.log(game.gyms);
 console.log('___________ex 7__________');
 /*
@@ -93,10 +101,7 @@ More Hints: The existing starter Pokemon will be *replaced* in your party with t
 Solve Exercise 7 here:
 */
 
-game.party.splice(0,1,pokemon[1]);
-game.party.splice(3,1,pokemon[4]);
-game.party.splice(6,1,pokemon[7]);
-game.party.splice(24,1,pokemon[25]);
+game.party.splice(0,1,pokemon[1]);;
 console.log(game.party);
 console.log('___________ex 8__________');
 /*
@@ -107,15 +112,39 @@ Exercise 8
 Solve Exercise 8 here:
 */
 
-for (let name = 0; name < name.length; name++) { 
-  console.log(name); 
-}
-
-console.log(game.party[0]);
-console.log(game.party[1]);
-console.log(game.party[2]);
-console.log(game.party[3]);
+game.party.forEach(pokemon => {
+ 
+  console.log(pokemon.name);
+});
 console.log('___________ex 9__________');
+/*
+Exercise 9
+1. Can you print out all the starter Pokémon from the `pokemon` array?
+2. Think about how you can identify a starter Pokémon and then log their names.
+
+
+Solve Exercise 9 here:
+*/
+
+pokemon.forEach((pn) => {
+if(pn.starter === true) {
+  console.log(pn.name);
+}
+});
+
+console.log('___________ex 10__________');
+/*
+Exercise 10
+Create a method called `catchPokemon` and add it to the `game` object. You should not need to edit the original game object directly. This method should:
+  - Accept an object as a parameter called `pokemonObj`
+  - Add the `pokemonObj` to the `game.party` array.
+  - not return anything
+
+After writing this method, call it and pass in a Pokemon object of your choice from the `pokemon` data to catch it.
+
+Solve Exercise 10 here:
+*/
+game.catchPokemon();
 
 
 
