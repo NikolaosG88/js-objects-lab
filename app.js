@@ -178,6 +178,26 @@ game.pokeballs = function(pokemonObj) {
 game.pokeballs(pokemon[36]);
 console.log(game.items);
 
+console.log('___________ex 12__________');
+
+/*
+Exercise 12
+1. Similar to Exercise 6, now complete gyms with a difficulty below 6. How will you approach this?
+ (change the value of `complete` in the qualifying objects from false to true).
+
+Solve Exercise 12 here:
+*/
+for (let i = 0; i < game.gyms.length; i++) {
+  if (game.gyms[i].difficulty <= 6) {
+  game.gyms[i].completed = true;
+  }
+   }; 
+   console.log(game.gyms);
+   
+   console.log('___________ex 13__________');
+
+
+
 
 
 
